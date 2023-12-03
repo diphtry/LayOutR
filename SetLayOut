@@ -1,0 +1,146 @@
+import View.DEMO_BorderLayout;
+import View.DEMO_GridLayout;
+import View.Demo_FlowLayout;
+
+public class Main {
+    public static void main(String[] args){
+
+//        Demo_FlowLayout D1 = new Demo_FlowLayout();
+//        D1.Demo_FlowLayout();
+//        DEMO_GridLayout D2 = new DEMO_GridLayout();
+//        D2.DEMO_GridLayout();
+        DEMO_BorderLayout D3 = new DEMO_BorderLayout();
+        D3.DEMO_BorderLayout();
+
+    }
+}
+package View;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class Demo_FlowLayout extends JFrame {
+    public void Demo_FlowLayout()
+    {
+        this.setTitle("DEMO_FLOWLAYOUT");
+        this.setSize(500,400);
+        this.setLocationRelativeTo(null); // căn cửa sổ ở giữa màn hình
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+
+
+        //SET LAYOUT
+
+
+        //set Flowlayout
+        FlowLayout flowLayout = new FlowLayout();
+        FlowLayout F2 = new FlowLayout(FlowLayout.RIGHT); // Căn phải
+        FlowLayout F3 = new FlowLayout(FlowLayout.LEFT);  // Căn trái
+        FlowLayout F4 = new FlowLayout(FlowLayout.CENTER, 50, 50);  // Căn Giữa , Khoảng cách giữa các Jbutton.
+        FlowLayout F5 = new FlowLayout(FlowLayout.LEADING); //
+        FlowLayout F6 = new FlowLayout(FlowLayout.TRAILING);
+       //this.setLayout(flowLayout);
+        this.setLayout(F4);
+
+
+
+        JButton jButton1 = new JButton("1");
+        JButton jButton2 = new JButton("2");
+        JButton jButton3 = new JButton("3");
+
+
+       // add thành phần
+        this.add(jButton1);
+        this.add(jButton2);
+        this.add(jButton3);
+
+// Tạo vào for tạo và add jButton
+//        for(int i = 1; i <= 25; i++) // Tạo vòng for để tạo nhiều Jbutton
+//        {
+//            JButton jButton = new JButton(i +  " "); // bên trong ngoặc chỉ nhận dạng text nên cộng thêm khoảng trắng.
+//            this.add(jButton);
+//
+//        }
+
+
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+
+//        this.setVisible(true);
+
+
+
+    }
+
+}
+package View;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class DEMO_GridLayout extends JFrame{
+
+    public void DEMO_GridLayout() {
+        this.setTitle("TEST GRIDLAYOUT");
+        this.setLocationRelativeTo(null);
+        this.setSize(600,450);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+
+        // set GridLayout
+
+        GridLayout gridLayout = new GridLayout();//Tạo một grid layout với mặc định là một cột mỗi thành phần, trong một hàng đơn.
+        GridLayout gridLayout1 = new GridLayout(4, 4); //Tạo một grid layout với các hàng và cột đã cho.
+        GridLayout gridLayout2 = new GridLayout(4,4,20,20); // //Tạo một grid layout với các hàng và cột đã cho cùng với các khoảng cách theo chiều dọc và ngang đã xác định.
+        this.setVisible(true);
+        this.setLayout(gridLayout1);
+
+
+        // set jButton
+        // Tạo vào for tạo và add jButton
+        for(int i = 1; i <= 16; i++)
+        {
+            JButton jButton = new JButton(i + " "); // bên trong ngoặc chỉ nhận dạng text nên cộng thêm khoảng trắng.
+            this.add(jButton);
+        }
+        this.setVisible(true);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+    }
+    }
+
+package View;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class DEMO_BorderLayout extends JFrame {
+    public void DEMO_BorderLayout() {
+        this.setTitle("TEST GRIDLAYOUT");
+        this.setLocationRelativeTo(null);
+        this.setSize(600, 450);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+
+        // set BorderLayout
+
+        BorderLayout borderLayout = new BorderLayout(); // mặc định
+        BorderLayout borderLayout1 = new BorderLayout(50, 50); // thêm khoảng cách
+        this.setLayout(borderLayout1);
+
+        JButton jButton = new JButton("1");
+        JButton jButton1 = new JButton("2");
+        JButton jButton2 = new JButton("3");
+        JButton jButton3 = new JButton("4");
+        JButton jButton4 = new JButton("5");
+
+        this.add(jButton, BorderLayout.NORTH); // Hướng Bắc
+        this.add(jButton1, BorderLayout.SOUTH); // Hướng Nam
+        this.add(jButton2, BorderLayout.WEST); // Hướng Tây
+        this.add(jButton3, BorderLayout.EAST); // hướng đông
+        this.add(jButton4, BorderLayout.CENTER); // Ở giữa
+
+    }
+}
+
+
